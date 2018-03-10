@@ -1,0 +1,480 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Roboto;
+  color: #424242;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0; 
+}
+
+header, nav, footer, section, article, div {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*
+ *
+ *
+ * COMMON
+ *
+ * 
+ */
+
+.news__more {
+  float: right;
+  font-size: .8em;
+  color: #333;
+  text-decoration: none;
+}
+
+
+/*
+ *
+ *
+ * HEADER
+ *
+ *
+ */
+
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+	background-color: whitesmoke;
+}
+
+.header__inner {
+  margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.header__logo {
+  height: 72px;
+  margin-right: 1em;
+  vertical-align: top;
+  margin: 3px;
+}
+
+.header__title {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 0.5em auto 0.5em 0;
+  color: #212121;
+}
+
+/*
+ *
+ *
+ * HEADER HAMBURGER ICON
+ *
+ *
+ */
+
+.header__ham {
+	float: right;
+	cursor: pointer;
+	margin-right: 2em;
+}
+
+.header__ham1, .header__ham2, .header__ham3 {
+	width: 30px;
+  height: 5px;
+  background-color: #AAA;
+  margin: 5px 0;
+	transition: 0.4s;
+}
+
+.mobile .header__ham1 {
+	-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+	transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mobile .header__ham2 { 
+	opacity: 0;
+}
+
+.mobile .header__ham3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Hide hamburger on devices above mobiles */
+@media screen and (min-width: 500px) {
+	.header__ham {
+		display: none;
+	}
+}
+
+/*
+ *
+ *
+ * TOP LEVEL NAVIGATION
+ *
+ *
+ */
+
+.nav {
+	position: fixed;
+	width: 15rem;
+	right: 0;
+	top: 78px;
+	
+	z-index: 2;
+	transform: translateX(15rem);
+	transition: transform 0.5s ease-in-out;
+
+	background-color: whitesmoke;
+}
+
+.nav.open {
+	transform: translateX(0);
+}
+
+.nav__item:not(:last-child) {
+	border-bottom: #AAA solid 1px;	
+}
+
+.nav__item {
+  text-align: center;
+  padding: 15px 24px;
+	min-width: 48px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #616161;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  color: #212121;
+}
+
+/* Hide nav row on mobiles */
+/* @media screen and (max-width: 500px) { */
+	/* .nav { */
+		/* max-height: 0; */
+		/* transition: max-height 0.8s ease; */
+	/* } */
+	
+	/* .mobile.nav  { */
+		/* max-height: 100px; */
+		/* transition: max-height 0.8s ease; */
+	/* } */
+/* } */
+
+
+/*
+ *
+ *
+ * MAIN
+ *
+ *
+ */
+
+main {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+	padding-top: 78px;
+}
+
+/* Make content padding on devices above modiles */
+@media screen and (min-width: 500px) {
+	main {
+		padding: 78px 5px 0 5px;
+	}
+}
+
+/* Fix content width on desktops */
+@media screen and (min-width: 1200px) {
+	main {
+		max-width: 1200px;
+	}
+}
+
+/*
+ *
+ *
+ * CONTENT
+ *
+ *
+ */
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+/* Display two content items on devices above tablets */
+@media screen and (min-width: 700px) {
+	.content {
+		flex-direction: row;
+	}
+	.content-item {
+		width: 48%;
+		margin: 3px;
+	}
+	.news.recent-news {
+		width: 100%;
+	}
+}
+
+/*
+ *
+ *
+ * HERO
+ *
+ *
+ */
+
+.hero {
+  position: relative;
+  background-image: url("./images/dog.jpg");
+  background-size: cover;
+  height: 300px;
+}
+
+.hero article {
+  box-sizing: border-box;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  color: #fff;
+  padding: 1em;
+}
+
+
+/*
+ *
+ *
+ * TOP NEWS
+ *
+ *
+ */
+
+.top-news {
+  height: 300px;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 1em;
+}
+
+.news__title {
+  font-weight: 300;
+  border-bottom: 1px solid #E0E0E0;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.top-news__item {
+  border-bottom: 1px solid #E0E0E0;
+  padding: 1em 0;
+  line-height: 19.2px;
+}
+
+.top-news__item:before {
+  content: "» ";
+}
+
+.top-news__item:last-child {
+  border-bottom: none;
+}
+
+.top-news__item a {
+  text-decoration: none;
+  color: #666;
+}
+
+.top-news__item a:hover,
+.top-news__item a:active {
+  text-decoration: underline;
+}
+
+
+/*
+ *
+ *
+ * SPORT SCORES
+ *
+ *
+ */
+
+.scores {
+  padding-top: 1em;
+}
+
+.scores__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scores__table th,
+.scores__table td {
+  padding: 1em; 
+}
+
+.scores__table th {
+  color: #fff;
+  font-weight: 300;
+  background-color: #78909C;
+}
+
+.scores__table tr:nth-child(odd) td {
+  background-color: #fff;
+}
+
+.scores__table tr:nth-child(even) td {
+  background-color: #eceff1;
+}
+
+.scores__table td.winner {
+  font-weight: bold;
+}
+
+.scores__table td:nth-child(3) {
+  text-align: right;
+}
+
+.scores__table td:nth-child(2),
+.scores__table td:nth-child(5) {
+  text-align: center;
+}
+
+/*
+ *
+ *
+ * WEATHER
+ *
+ *
+ */
+
+.weather {
+  padding: 1em;
+}
+
+.weather__location {
+  display: block;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.weather__desc {
+  display: block;
+  font-size: 1.2em;
+}
+
+.weather__today {
+  width: 60%;
+  vertical-align: middle;
+}
+
+.weather__today__image {
+  vertical-align: middle
+}
+
+.weather__today__temp {
+  font-size: 3em;
+}
+
+.weather__today__deg {
+  font-size: 2em;
+  display: inline;
+}
+
+.weather__next__item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+
+.weather__next__item span {
+  display: block;
+}
+
+.weather__next__image {
+  width: 100%;
+}
+
+
+/*
+ *
+ *
+ * RECENT NEWS
+ *
+ *
+ */
+
+.recent-news {
+  clear: both;
+  padding: 1em;
+}
+
+.snippet {
+  clear: both;
+  margin: 24px 0;
+}
+
+.snippet__thumbnail {
+  width: 100px;
+  float: left;
+  margin-right: 1em;
+}
+
+.snippet__title {
+  font-weight: 500;
+}
+
+.snippet__title a {
+  text-decoration: none;
+  color: #666;
+}
+
+.snippet__title a:hover,
+.snippet__title a:active {
+  text-decoration: underline;
+}
+
+
+/*
+ *
+ *
+ * FOOTER
+ *
+ *
+ */
+
+footer {
+  border-top: 1px solid #E0E0E0;
+  padding: 1em;
+  width: 100%;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+footer a {
+  text-decoration: none;
+  color: #333;
+}
