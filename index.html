@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Brighton Times</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
   </head>
   <body>
 
@@ -14,7 +15,7 @@
       <div class="header__inner">
         <img class="header__logo" src="images/city.png" alt="iconic view of a cityscape">
         <h1 class="header__title"> The Brighton Times </h1>
-				<div class="header__ham" onclick="toggleHamburger(this)">
+        <div class="header__ham" onclick="toggleHamburger(this)">
 					<div class="header__ham1"></div>
 					<div class="header__ham2"></div>
 					<div class="header__ham3"></div>
@@ -24,23 +25,24 @@
 
     <nav id="drawer" class="nav">
       <ul class="nav__list">
-        <li class="nav__item"><a href="#">NEWS</a></li>
-        <li class="nav__item"><a href="#">EVENTS</a></li>
-        <li class="nav__item"><a href="#">CULTURE</a></li>
-        <li class="nav__item"><a href="#">BLOG</a></li>
+        <li class="nav__item"><a href="#hero">Hero</a></li>
+        <li class="nav__item"><a href="#top-news">Top News</a></li>
+        <li class="nav__item"><a href="#recent-news">Recent News</a></li>
+        <li class="nav__item"><a href="#scores">Scores</a></li>
+        <li class="nav__item"><a href="#weather">Weather</a></li>
       </ul>
     </nav>
 
     <main>
       <section class="content">
-        <section class="content-item hero">
-          <article class="description">
-            <h2>Absolutely astonishing breaking news!</h2>
-            <p>Organic raw denim Vice keffiyeh lomo Kickstarter art lomo Kickstarter art four loko. Organic raw denim Vice keffiyeh lomo Kickstarter art lomo Kickstarter art four loko.</p>
+        <section class="hero" id="hero">
+          <article class="hero__description">
+            <h2 class="hero__header">Absolutely astonishing breaking news!</h2>
+            <p class="hero__text">Organic raw denim Vice keffiyeh lomo Kickstarter art lomo Kickstarter art four loko. Organic raw denim Vice keffiyeh lomo Kickstarter art lomo Kickstarter art four loko.</p>
           </article>
         </section>
 
-        <section class="content-item news top-news">
+        <section class="news top-news" id="top-news">
           <h2 class="news__title">Top news <a href="#" class="news__more">+ more</a></h2>
           <ul>
             <li class="top-news__item">
@@ -58,11 +60,12 @@
           </ul>
         </section>
 
-        <section class="content-item scores">
+        <section class="scores" id="scores">
           <table class="scores__table">
             <thead>
               <tr>
                 <th>date</th>
+                <th class="scores__location">location</th>
                 <th>team</th>
                 <th colspan="2">score</th>
                 <th>team</th>
@@ -71,6 +74,7 @@
             <tbody>
               <tr>
                 <td>Friday</td>
+                <td class="scores__location">Brighton</td>
                 <td>Bears</td>
                 <td>95</td>
                 <td class="winner">109</td>
@@ -78,6 +82,7 @@
               </tr>
               <tr>
                 <td>Friday</td>
+                <td class="scores__location">Worthington</td>
                 <td class="winner">Otters</td>
                 <td class="winner">3</td>
                 <td>1</td>
@@ -85,6 +90,7 @@
               </tr>
               <tr>
                 <td>Saturday</td>
+                <td class="scores__location">Littlehampton</td>
                 <td class="winner">Wolves</td>
                 <td class="winner">7</td>
                 <td>0</td>
@@ -92,6 +98,7 @@
               </tr>
               <tr>
                 <td>Sunday</td>
+                <td class="scores__location">Portslade</td>
                 <td>Hawks</td>
                 <td>11</td>
                 <td class="winner">12</td>
@@ -99,6 +106,7 @@
               </tr>
               <tr>
                 <td>Sunday</td>
+                <td class="scores__location">Hove</td>
                 <td class="winner">Stags</td>
                 <td class="winner">6</td>
                 <td>2</td>
@@ -109,11 +117,11 @@
           </table>
         </section>
 
-        <section class="content-item weather">
+        <section class="weather" id="weather">
           <span class="weather__location">Brighton, UK</span>
           <span class="weather__desc">Sunny</span>
           <span class="weather__today">
-          <img class="weather__today__image" src="images/weather.png" alt="icon of a partially sunny day"><span class="weather__today__temp">13</span><span class="weather__today__deg">&deg;C</span>
+          <img class="weather__today__image" src="images/weather.png" alt="icon of a partially cloudy day"><span class="weather__today__temp">13</span><span class="weather__today__deg">&deg;C</span>
           </span>
           <ul class="weather__next">
             <li class="weather__next__item">
@@ -140,31 +148,43 @@
           </ul>
         </section>
 
-        <section class="content-item news recent-news">
+        <section class="news recent-news" id="recent-news">
           <h2 class="news__title">Latest news <a href="#" class="news__more">+ more</a></h2>
           <ul>
             <li class="snippet">
-              <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							<picture>
+								<source srcset="images/dog.jpg" media="(min-width: 550px)">
+								<img class="snippet__thumbnail" src="images/fallback.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							</picture>
               <h3 class="snippet__title"><a href="#">Gastropub distillery Marfa farm-to-table</a></h3>
               <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
               Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.
               </p>
             </li>
             <li class="snippet">
-              <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							<picture>
+								<source srcset="images/dog.jpg" media="(min-width: 550px)">
+								<img class="snippet__thumbnail" src="images/fallback.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							</picture>
               <h3 class="snippet__title"><a href="#">Organic raw keffiyeh four loko.</a></h3>
               <p>Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice loko.
               </p>
             </li>
             <li class="snippet">
-              <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							<picture>
+								<source srcset="images/dog.jpg" media="(min-width: 550px)">
+								<img class="snippet__thumbnail" src="images/fallback.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							</picture>
               <h3 class="snippet__title"><a href="#">Kickstarter art party cronut scenester.</a></h3>
               <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
               Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko.
               </p>
             </li>
             <li class="snippet">
-              <img class="snippet__thumbnail" src="images/dog.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							<picture>
+								<source srcset="images/dog.jpg" media="(min-width: 550px)">
+								<img class="snippet__thumbnail" src="images/fallback.jpg" alt="picture of a girl with a large, stuffed dog toy">
+							</picture>
               <h3 class="snippet__title"><a href="#">Squid lomo Kickstarter art party cronut </a></h3>
               <p>Gastropub distillery Marfa farm-to-table, Etsy Truffaut fingerstache.
               Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko. Squid lomo Kickstarter art party cronut scenester. Organic raw denim Vice keffiyeh four loko.Vice keffiyeh four loko.
@@ -180,8 +200,56 @@
           <li><a href="#">RSS</a></li>
         </ul>
       </footer>
-		</main>
+    </main>
 		
-		<script src="script.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
+
+		<script>
+			
+			const toggleHamburger = (el) => {
+				el.classList.toggle('mobile');
+				document.getElementById('drawer').classList.toggle('open');
+			}
+
+			$('a[href*="#"]')
+				// Remove links that don't actually link to anything
+				.not('[href="#"]')
+				.not('[href="#0"]')
+				.click(function(event) {
+					// On-page links
+					if (
+						location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+						&& 
+						location.hostname == this.hostname
+					) {
+						// Figure out element to scroll to
+						var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+						// Does a scroll target exist?
+						if (target.length) {
+							// Only prevent default if animation is actually gonna happen
+							event.preventDefault();
+							$('html, body').animate({
+								scrollTop: target.offset().top - 56
+							}, 1000, function() {
+								// Callback after animation
+								// Must change focus!
+								var $target = $(target);
+								$target.focus();
+								if ($target.is(":focus")) { // Checking if the target was focused
+									return false;
+								} else {
+									$target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+									$target.focus(); // Set focus again
+								};
+							});
+						}
+					}
+				});
+
+    </script>
   </body>
 </html>
